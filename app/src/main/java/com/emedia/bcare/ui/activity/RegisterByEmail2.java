@@ -137,6 +137,7 @@ public class RegisterByEmail2 extends AppCompatActivity {
                                 for (UserData userData : response.body().getData()) {
                                     SharedUser.getSharedUser().saveClientRegisterData(userData);
                                     SharedUser.getSharedUser().setToken(userData.getUsersSocail().getAccessToken());
+                                    SharedUser.getSharedUser().setUserId(userData.getUsersSocail().getUserId());
                                 }
                                 //intentTo(RegisterByEmail2.this, GenderActivity.class);
                                 Intent i = new Intent(RegisterByEmail2.this, RegisterVerifyActivity.class);
